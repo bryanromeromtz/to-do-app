@@ -1,0 +1,22 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+}
+
+#root {
+  height: 100vh;
+}
+
+p {
+  color: coral;
+}
+
+@import "./notes-list.css";
+@import "./navigation.css";
+@import "./create-user.css";
+@import "./create-note.css";

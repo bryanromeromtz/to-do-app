@@ -1,0 +1,52 @@
+.navbar-header {
+  background-color: #15172b;
+  border-bottom: 3px solid #303245;
+}
+
+.navbar-home {
+  color: whitesmoke;
+  font-weight: 600;
+  font-size: 23px;
+  height: 30px;
+  width: 80px;
+  background: #303245;
+  display: grid;
+  align-content: center;
+  justify-content: center;
+  border-radius: 5px;
+}
+
+.navbar-home:hover {
+  color: white;
+}
+
+.nav-link {
+  color: lightgrey;
+  font-weight: 700;
+  font-size: 20px;
+  transition: all 0.4s 0s ease;
+  -webkit-transition: all 0.4s 0s ease;
+}
+
+.nav-link:hover {
+  text-decoration: underline;
+  color: #303245;
+}
+
+.hamburger {
+  color: whitesmoke;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 23px;
+}
+
+.hamburger:active {
+  outline: none;
+}
+
+@media (max-width:560px) {
+  .nav-link {
+    font-size: 15px;
+  }
+}

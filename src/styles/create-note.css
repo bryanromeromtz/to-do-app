@@ -1,0 +1,42 @@
+.form-note {
+  background-color: #15172b;
+}
+
+.create-note__title {
+  font-size: 30px;
+  font-weight: 600;
+  color: whitesmoke;
+  margin-bottom: 20px;
+}
+
+.create-note__btn {
+  background-color: #08d;
+  color: whitesmoke;
+  transition: all 0.4s 0s ease;
+  -webkit-transition: all 0.4s 0s ease;
+  border-radius: 20px;
+  width: 130px;
+  margin-top: 5px;
+}
+
+.create-note__btn:active {
+  background-color: #06b;
+  outline: none;
+  box-shadow: none;
+}
+
+.create-note__btn:hover {
+  color: whitesmoke;
+}
+
+@media (max-width:434px) {
+  .create-note__title {
+    font-size: 25px;
+  }
+}
+
+@media (max-width:393px) {
+  .create-note__title {
+    font-size: 20px;
+  }
+}

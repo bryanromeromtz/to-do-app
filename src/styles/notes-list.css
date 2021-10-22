@@ -1,0 +1,47 @@
+.notes-list__title {
+  display: flex;
+  justify-content: center;
+  font-size: 30px;
+  font-weight: 600;
+  color: rgba(0, 0, 0, 0.747);
+  margin-bottom: 30px;
+}
+
+.card-header {
+  color: white;
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+.asterisk-icon {
+  margin-right: 5px;
+  font-size: 10px;
+}
+
+.scale-up-center {
+  transition: all .2s ease-in-out;
+  border: none;
+  box-shadow: 0px 3px 25px #A5A5A5;
+}
+
+.scale-up-center:hover {
+  transform: scale(1.2);
+}
+
+.icon-trash {
+  color: crimson;
+  grid-column: s-s/s-e;
+}
+
+.icon-edit {
+  color: crimson;
+  grid-column: t-s/t-e;
+}
+
+.card-foot {
+  display: grid;
+  justify-self: end;
+  align-self: end;
+  grid-template-columns: [f-s] 1fr [f-e s-s] 20px [s-e t-s] 20px [t-e];
+}
