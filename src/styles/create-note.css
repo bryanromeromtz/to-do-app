@@ -1,3 +1,14 @@
+.container-create-note {
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 89.9vh;
+  min-width: 100vw;
+}
+
+.create-note {
+  transform: translateY(100px);
+}
+
 .form-note {
   background-color: #15172b;
 }
@@ -5,12 +16,12 @@
 .create-note__title {
   font-size: 30px;
   font-weight: 600;
-  color: whitesmoke;
+  color: #ecf4ed;
   margin-bottom: 20px;
 }
 
 .create-note__btn {
-  background-color: #08d;
+  background-color: #fa6c6c;
   color: whitesmoke;
   transition: all 0.4s 0s ease;
   -webkit-transition: all 0.4s 0s ease;
@@ -20,7 +31,7 @@
 }
 
 .create-note__btn:active {
-  background-color: #06b;
+  background-color: #fc5464;
   outline: none;
   box-shadow: none;
 }
@@ -38,5 +49,11 @@
 @media (max-width:393px) {
   .create-note__title {
     font-size: 20px;
+  }
+}
+
+@media (max-width:770px) {
+  .create-note {
+    margin: 0 20px;
   }
 }

@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 import './styles/main.css';
@@ -7,17 +7,20 @@ import Navigation from './components/Navigation';
 import NotesList from './components/NotesList';
 import CreateNote from './components/CreateNote';
 import CreateUser from './components/CreateUser';
+import NotFoundPage from './components/NotFoundPage'
 
 function App() {
   return (
     <Router>
       <Navigation />
-      <div className="container p-5 app-wrapper">
-        <Route path="/" exact component={NotesList} />
-        <Route path="/edit/:id" component={CreateNote} />
-        <Route path="/create" component={CreateNote} />
-        <Route path="/user" component={CreateUser} />
-      </div>
+      <Switch>
+        <Route exact path="/" component={NotesList} />
+        <Route exact path="/edit/:id" component={CreateNote} />
+        <Route exact path="/create" component={CreateNote} />
+        <Route exact path="/user" component={CreateUser} />
+
+        <Route exact path="*" component={NotFoundPage} />
+      </Switch>
     </Router>
   );
 }

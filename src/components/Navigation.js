@@ -20,10 +20,10 @@ class Navigation extends Component {
                 <Link className="nav-link active cornflowerblue" to="/">Notes</Link>
               </li>
               <li className="nav-item">
-                <Link className="nav-link darkviolet" to="/create">Create Note</Link>
+                <Link className="nav-link darkviolet active" to="/create">Create Note</Link>
               </li>
               <li className="nav-item">
-                <Link className="nav-link yellow" to="/user">Create User</Link>
+                <Link className="nav-link yellow active" to="/user">Create User</Link>
               </li>
             </ul>
           </div>

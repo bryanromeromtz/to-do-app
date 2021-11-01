@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.min.css';
 
+import BG from '../assets/images/5437842.jpg';
 
 class CreateNote extends Component {
 
@@ -20,13 +21,13 @@ class CreateNote extends Component {
 
   async componentDidMount() {
 
-    const res = await axios.get("http://localhost:4000/api/users");
+    const res = await axios.get("https://enigmatic-spire-78063.herokuapp.com/api/users");
     this.setState({
       users: res.data.map(user => user.username),
       userSelected: res.data[0]
     });
     if (this.props.match.params.id) {
-      const res = await axios.get(`http://localhost:4000/api/notes/${this.props.match.params.id}`);
+      const res = await axios.get(`https://enigmatic-spire-78063.herokuapp.com/api/notes/${this.props.match.params.id}`);
       this.setState({
         title: res.data.title,
         description: res.data.description,
@@ -46,7 +47,7 @@ class CreateNote extends Component {
       author: this.state.userSelected,
       date: this.state.date
     }
-    await axios.post("http://localhost:4000/api/notes", newNote);
+    await axios.post("https://enigmatic-spire-78063.herokuapp.com/api/notes", newNote);
     this.props.history.push('/');
   }
 
@@ -70,86 +71,88 @@ class CreateNote extends Component {
       author: this.state.userSelected,
       date: this.state.date
     }
-    await axios.put(`http://localhost:4000/api/notes/${this.state.id}`, upadateNote);
+    await axios.put(`https://enigmatic-spire-78063.herokuapp.com/api/notes/${this.state.id}`, upadateNote);
     this.props.history.push('/');
   }
 
   render() {
     return (
-      <div className="create-note" >
-        <div className="col-md-6 offset-md-3">
-          <div className="card card-body form-note">
-            <h4 className="create-note__title">Create New Note</h4>
-            {/* SELECT USER */}
-            <div className="form-group">
-              <select
-                className="form-control"
-                name="userSelected"
-                onChange={this.handleInputChange}
-                value={this.state.userSelected}
-              >
-                {
-                  this.state.users.map(user =>
-                    <option
-                      key={user}
-                      value={user}
-                    >
-                      {user}
-                    </option>
-                  )
-                }
-              </select>
-            </div>
-            <div className="form-group">
-              <input
-                type="text"
-                className="form-control"
-                placeholder="Title"
-                name="title"
-                onChange={this.handleInputChange}
-                required
-                value={this.state.title}
-              />
-            </div>
-            <div className="form-group">
-              <textarea
-                name="description"
-                className="form-control"
-                placeholder="Description"
-                onChange={this.handleInputChange}
-                maxLength="100"
-                required
-                value={this.state.description}
-              ></textarea>
-            </div>
+      <div className="container-create-note" style={{ backgroundImage: `url(${BG})` }}>
+        <div className="create-note" >
+          <div className="col-md-6 offset-md-3">
+            <div className="card card-body form-note">
+              <h4 className="create-note__title">Create New Note</h4>
+              {/* SELECT USER */}
+              <div className="form-group">
+                <select
+                  className="form-control"
+                  name="userSelected"
+                  onChange={this.handleInputChange}
+                  value={this.state.userSelected}
+                >
+                  {
+                    this.state.users.map(user =>
+                      <option
+                        key={user}
+                        value={user}
+                      >
+                        {user}
+                      </option>
+                    )
+                  }
+                </select>
+              </div>
+              <div className="form-group">
+                <input
+                  type="text"
+                  className="form-control"
+                  placeholder="Title"
+                  name="title"
+                  onChange={this.handleInputChange}
+                  required
+                  value={this.state.title}
+                />
+              </div>
+              <div className="form-group">
+                <textarea
+                  name="description"
+                  className="form-control"
+                  placeholder="Description"
+                  onChange={this.handleInputChange}
+                  maxLength="100"
+                  required
+                  value={this.state.description}
+                ></textarea>
+              </div>
 
-            <div className="form-group">
-              <DatePicker
-                className="form-control"
-                selected={this.state.date}
-                onChange={this.handleChangeDate}
-              />
+              <div className="form-group">
+                <DatePicker
+                  className="form-control"
+                  selected={this.state.date}
+                  onChange={this.handleChangeDate}
+                />
+              </div>
+              {
+                this.state.isEdit ?
+                  <form onSubmit={this.handleSubmitUpdateNote}>
+                    <button
+                      className="btn create-note__btn"
+                      type="submit"
+                    >
+                      Update Note
+                    </button>
+                  </form>
+                  :
+                  <form onSubmit={this.handleSubmitCreateNote}>
+                    <button
+                      className="btn create-note__btn"
+                      type="submit"
+                    >
+                      Create Note
+                    </button>
+                  </form>
+              }
             </div>
-            {
-              this.state.isEdit ?
-                <form onSubmit={this.handleSubmitUpdateNote}>
-                  <button
-                    className="btn create-note__btn"
-                    type="submit"
-                  >
-                    Update Note
-                  </button>
-                </form>
-                :
-                <form onSubmit={this.handleSubmitCreateNote}>
-                  <button
-                    className="btn create-note__btn"
-                    type="submit"
-                  >
-                    Create Note
-                  </button>
-                </form>
-            }
           </div>
         </div>
       </div>

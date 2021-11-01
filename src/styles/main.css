@@ -13,10 +13,11 @@ body {
 }
 
 p {
-  color: coral;
+  color: #04cc84;
 }
 
 @import "./notes-list.css";
 @import "./navigation.css";
 @import "./create-user.css";
 @import "./create-note.css";
+@import "./not-found-page.css";

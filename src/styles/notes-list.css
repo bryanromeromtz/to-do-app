@@ -1,10 +1,37 @@
-.notes-list__title {
+.container-note-list {
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 89.9vh;
+  min-width: 90vw;
+}
+
+.search-note {
+  display: flex;
+  justify-content: center;
+  margin-top: 50px;
+}
+
+.card {
+  margin: 0 20px;
+}
+
+.notes-list_list {
+  margin-right: auto;
+}
+
+.notes-list__header {
   display: flex;
   justify-content: center;
   font-size: 30px;
-  font-weight: 600;
+  font-weight: bold;
   color: rgba(0, 0, 0, 0.747);
   margin-bottom: 30px;
+  transform: translateY(30px);
+}
+
+.note-list__title {
+  font-weight: bold;
+  font-size: 20px;
 }
 
 .card-header {
@@ -22,11 +49,19 @@
 .scale-up-center {
   transition: all .2s ease-in-out;
   border: none;
-  box-shadow: 0px 3px 25px #A5A5A5;
+}
+
+.info-card {
+  color: #2324a2;
+  font-weight: 600;
+}
+
+.note-list__notes {
+  margin-left: 50px;
 }
 
 .scale-up-center:hover {
-  transform: scale(1.2);
+  transform: scale(1.1);
 }
 
 .icon-trash {

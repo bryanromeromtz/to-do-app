@@ -1,15 +1,31 @@
+.container-create-user {
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 89.9vh;
+  min-width: 90vw;
+}
+
 .create-user {
   justify-content: space-evenly;
+  margin-right: auto;
+}
+
+.position-user-content {
+  margin-top: 170px;
+}
+
+.position-user-content-2 {
+  margin-top: 170px;
 }
 
 .create-user__title {
   font-size: 30px;
   font-weight: 600;
-  color: whitesmoke;
+  color: #f4ecec;
 }
 
 .save-user-btn {
-  background-color: #08d;
+  background-color: #8c74ab;
   color: whitesmoke;
   transition: all 0.4s 0s ease;
   -webkit-transition: all 0.4s 0s ease;
@@ -19,7 +35,7 @@
 }
 
 .save-user-btn:active {
-  background-color: #06b;
+  background-color: #746694;
   outline: none;
   box-shadow: none;
 }
@@ -31,7 +47,7 @@
 .user-list {
   font-size: 20px;
   font-weight: 500;
-  color: rgba(0, 0, 0, 0.747);
+  color: #23243c;
   display: flex;
   justify-content: space-between;
   transition: all 0.4s 0s ease;
@@ -39,7 +55,8 @@
 }
 
 .user-list:hover {
-  background-color: rgb(122, 193, 236);
+  background-color: #b4a4cc;
+  color: #f4ecec;
 }
 
 .icon-del-user {
@@ -52,7 +69,7 @@
 
 .icon-del-user:hover {
   cursor: pointer;
-  color: crimson;
+  color: #fb7704;
 }
 
 .form-control {
@@ -78,7 +95,7 @@
 }
 
 .card-user {
-  box-shadow: 0px 3px 20px #807f7f;
+  /* box-shadow: 0px 3px 20px #807f7f; */
   height: 200px;
   border: none;
   background-color: #15172b;
@@ -87,5 +104,94 @@
 @media (max-width:398px) {
   .create-user__title {
     font-size: 25px;
+  }
+}
+
+@media (max-width:770px) {
+  .position-user-content-2 {
+    margin-top: 0;
+  }
+  .create-user {
+    margin: 0 20px;
+  }
+}
+
+/* LOADING */
+
+.loading {
+  text-align: center;
+}
+
+h2 {
+  color: #23243c;
+  margin: 0;
+  font: .8em verdana;
+  text-transform: uppercase;
+  letter-spacing: .1em;
+  font-size: 18px;
+}
+
+/*
+ * Loading Dots
+ * Can we use pseudo elements here instead :after?
+ */
+
+.loading span {
+  display: inline-block;
+  vertical-align: middle;
+  width: .6em;
+  height: .6em;
+  margin: .19em;
+  background: #fb7804;
+  border-radius: .6em;
+  animation: loading 1s infinite alternate;
+}
+
+/*
+ * Dots Colors
+ * Smarter targeting vs nth-of-type?
+ */
+
+.loading span:nth-of-type(2) {
+  background: #f3acac;
+  animation-delay: 0.2s;
+}
+
+.loading span:nth-of-type(3) {
+  background: #f39495;
+  animation-delay: 0.4s;
+}
+
+.loading span:nth-of-type(4) {
+  background: #b4a4cc;
+  animation-delay: 0.6s;
+}
+
+.loading span:nth-of-type(5) {
+  background: #746694;
+  animation-delay: 0.8s;
+}
+
+.loading span:nth-of-type(6) {
+  background: #645f77;
+  animation-delay: 1.0s;
+}
+
+.loading span:nth-of-type(7) {
+  background: #23243b;
+  animation-delay: 1.2s;
+}
+
+/*
+ * Animation keyframes
+ * Use transition opacity instead of keyframes?
+ */
+
+@keyframes loading {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
   }
 }
